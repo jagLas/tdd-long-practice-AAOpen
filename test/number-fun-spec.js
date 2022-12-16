@@ -9,12 +9,12 @@ describe('returnsThree function', function(){
 })
 
 describe('reciprocal(num)', function(){
-    it('should take a number as an argument and return the reciprocal', function() {
-        // expect(reciprocal(3)).to.equal(1/3);
+    it('should take a number as an argument and return the reciprocal if between 1 and 1,000,000 inclusive', function() {
+        expect(reciprocal(3)).to.equal(1/3);
         expect(reciprocal(1)).to.equal(1);
-        expect(reciprocal(1/5)).to.equal(5);
-        expect(reciprocal(3/4)).to.equal(4/3);
-        expect(reciprocal(1,000,000)).to.equal(1/1,000,000);
+        // expect(reciprocal(1/5)).to.equal(5);
+        expect(reciprocal(4/3)).to.equal(3/4);
+        expect(reciprocal(1000000)).to.equal(1/1000000);
     })
 
     // //older spec. Now depricated. Uncomment if returning to old spec
@@ -31,6 +31,6 @@ describe('reciprocal(num)', function(){
         expect(() => reciprocal(1/4)).to.throw(TypeError);
         expect(() => reciprocal(0)).to.throw(TypeError);
         expect(() => reciprocal(-30)).to.throw(TypeError);
-        expect(() => reciprocal(1,000,001)).to.throw(TypeError);
+        expect(() => reciprocal(1000001)).to.throw(TypeError);
     })
 })
