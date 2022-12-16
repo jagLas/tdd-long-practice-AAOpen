@@ -81,8 +81,32 @@ class Scalene extends Triangle {
 
 }
 
-class Isosceles {
+class Isosceles extends Triangle {
+    constructor(a, b, c) {
+        super(a, b, c);
+        super.validate();
+    }
 
+    isIsosceles() {
+        //checks if valid triangle and returns false if not
+        if (!this.isValid) {
+            return false;
+        }
+
+        if (this.a === this.b || this.a === this.c || this.b === this.c) {
+            return true;
+        }
+
+        return false;
+    }
+    
+    validate() {
+        if(this.isIsosceles()) {
+            this.isValidIsosceles = true;
+        }   else {
+            this.isValidIsosceles = false;
+        }
+    }
 }
 
 module.exports = {

@@ -111,8 +111,8 @@ describe ('Isosceles Triangles', function () {
     })
     it('should set the isValid property on construction', () => {
         expect(triangle.isValid).to.be.true;
-        expect(triangle4.isValid).to.be.false;
-        expect(triangle3.isValid).to.be.true;
+        expect(triangle4.isValid).to.be.true;
+        expect(triangle3.isValid).to.be.false;
     })
 
     it('isIsosceles() should return true if it is a valid Isosceles triangle and false if not', function (){
