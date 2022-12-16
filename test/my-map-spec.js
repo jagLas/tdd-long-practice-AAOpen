@@ -7,7 +7,7 @@ describe('It should mimic the built in Array.map', function(){
         const arr = [1, 2, 3];
         const callback = el => el * 2;
 
-        expect(myMap(arr, callback)).to.equal([2, 4, 6]);
-        expect(myMap(arr)).to.equal([1, 2, 3]);
+        expect(myMap(arr, callback)).to.deep.equal([2, 4, 6]);
+        expect(myMap(arr)).to.deep.equal([1, 2, 3]);
     })
 })
