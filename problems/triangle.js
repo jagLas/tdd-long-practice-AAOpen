@@ -10,10 +10,14 @@ class Triangle {
     }
 
     hasValidSideLengths() {
+        //extracts side lengths into array
         const sides = Object.values(this);
+
+        //sorts array from smallest to largets
         sides.sort((a, b) => a - b);
         const twoSmallest = sides[0] + sides[1];
 
+        //checks if valid
         if (twoSmallest > sides [2]) {
             return true;
         }
@@ -22,6 +26,7 @@ class Triangle {
     }
 
     validate() {
+        //checks if valid and sets property
         if (this.hasValidSideLengths()) {
             this.isValid = true;
         } else {
@@ -30,9 +35,10 @@ class Triangle {
     }
 
     static getValidTriangles(...triangles) {
+        //validates all triangles
         triangles.forEach(triangle => triangle.validate());
-        
-        console.log(triangles)
+
+        //filters to ones that are valid
         const validTriangles = triangles.filter(triangle => {
             if (triangle.isValid) {
                 return true;
@@ -40,9 +46,10 @@ class Triangle {
                 return false;
             }
         })
-        console.log(validTriangles)
+
         return validTriangles;
     }
+    
 }
 
 class Scalene {
