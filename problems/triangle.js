@@ -49,10 +49,35 @@ class Triangle {
 
         return validTriangles;
     }
-    
+
 }
 
-class Scalene {
+class Scalene extends Triangle {
+    constructor(a, b, c) {
+        super(a, b, c);
+        super.validate();
+    }
+
+    isScalene() {
+        //checks if valid triangle and returns false if not
+        if (!this.isValid) {
+            return false;
+        }
+
+        if (this.a !== this.b && this.a !== this.c && this.b !== this.c) {
+            return true;
+        }
+
+        return false;
+    }
+
+    validate() {
+        if (this.isScalene()) {
+            this.isValidScalene = true;
+        } else {
+            this.isValidScalene = false;
+        }
+    }
 
 }
 
