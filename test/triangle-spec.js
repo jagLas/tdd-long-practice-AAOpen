@@ -8,10 +8,9 @@ let triangle, triangle2, triangle3, invalidTri, invalidTri2;
 
 describe('Triangle Class', function () {
     beforeEach( ()=> {
-        a = 2, b = 3, c = 4;
-        a2 = 1, b2 = 2, c2 = 5;
-        a3 = 0, b3 = 3, c3 = 3;
+
         triangle = new Triangle(2, 3, 4);
+        triangle2 = new Triangle(10, 5, 6)
         invalidTri = new Triangle(5, 1, 2);
         invalidTri2 = new Triangle (0, 3, 3);
 
@@ -30,6 +29,7 @@ describe('Triangle Class', function () {
 
     it('hasValidSideLengths() returns true if triangle is valid, and false if not', () => {
         expect(triangle.hasValidSideLengths()).to.be.true;
+        expect(triangle2.hasValidSideLengths()).to.be.true;
         expect(invalidTri.hasValidSideLengths()).to.be.false;
         expect(invalidTri2.hasValidSideLengths()).to.be.false;
     });
@@ -41,7 +41,7 @@ describe('Triangle Class', function () {
     });
 
     it('getValidTriangles() take in an arbitrary number of triangles and returns all that are valid', () => {
-        let res = getValidTriangles(triangle, invalidTri, invalidTri2);
-        expect(res).to.deep.equal([triangle]);
+        let res = Triangle.getValidTriangles(triangle, triangle2, invalidTri, invalidTri2);
+        expect(res).to.deep.equal([triangle, triangle2]);
     })
 })
